@@ -58,13 +58,14 @@ function App() {
 
   return (
     <div className="App p-2 max-w-2xl m-auto">
-      <div className="flex flex-col items-center my-0 sm:my-10">
+      <header className="flex flex-col items-center my-0 sm:my-10">
         <img src="/image.png" className="w-16 mt-4 mb-2" alt="📸"></img>
         <h1 className="text-4xl font-bold mb-1 tracking-tighter">Zac's Pics</h1>
         <p className="text-sm mb-4 text-neutral-500">
           Open an image to save it to your camera roll.
         </p>
-      </div>
+      </header>
+
       <LightGallery
         onInit={onInit}
         speed={500}
@@ -83,6 +84,10 @@ function App() {
           <p className="text-center col-span-3">Loading images…</p>
         )}
       </LightGallery>
+
+      <footer className="py-10 text-center text-neutral-500 text-sm">
+        © 2025 Grayscale Development
+      </footer>
     </div>
   );
 }
