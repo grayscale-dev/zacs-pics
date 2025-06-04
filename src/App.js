@@ -59,7 +59,7 @@ function App() {
   return (
     <div className="App p-2 max-w-2xl m-auto">
       <div className="flex flex-col items-center my-0 sm:my-10">
-        <img src="/image.png" className="w-16 mt-4 mb-2"></img>
+        <img src="/image.png" className="w-16 mt-4 mb-2" alt="logo"></img>
         <h1 className="text-4xl font-bold mb-1 tracking-tighter">Zac's Pics</h1>
         <p className="text-sm mb-4 text-neutral-500">
           Open an image to save it to your camera roll.
@@ -112,7 +112,7 @@ function Thumbnail({ src, onLongPress }) {
   return (
     <img
       src={src}
-      alt=""
+      alt={src}
       className="w-full h-32 object-cover transition-opacity duration-500 ease-in-out opacity-0"
       loading="lazy"
       onLoad={(e) => e.currentTarget.classList.add("opacity-100")}
