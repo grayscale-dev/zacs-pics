@@ -5,6 +5,22 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
+if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+  document.body.classList.add("dark");
+} else {
+  document.body.classList.remove("dark");
+}
+
+const themeColor = window.matchMedia("(prefers-color-scheme: dark)").matches
+  ? "#000000"
+  : "#ffffff";
+
+const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+if (metaThemeColor) {
+  metaThemeColor.setAttribute("content", themeColor);
+}
+
 root.render(
   <React.StrictMode>
     <App />
