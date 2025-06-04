@@ -59,7 +59,7 @@ function App() {
   return (
     <div className="App p-2 max-w-2xl m-auto">
       <header className="flex flex-col items-center my-0 sm:my-10">
-        <img src="/image.png" className="w-16 mt-4 mb-2" alt="📸"></img>
+        <img src="/image.png" className="w-20 mt-3 mb-1" alt="📸"></img>
         <h1 className="text-4xl font-bold mb-1 tracking-tighter">Zac's Pics</h1>
         <p className="text-sm mb-4 text-neutral-500">
           Open an image to save it to your camera roll.
