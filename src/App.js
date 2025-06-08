@@ -72,18 +72,24 @@ function App() {
     const thumbContainerUrl =
       "https://stgzaqcam.blob.core.windows.net/thumbnails?sp=racwdli&st=2025-06-08T15:35:15Z&se=2026-01-02T00:35:15Z&spr=https&sv=2024-11-04&sr=c&sig=wYqrVZ1B%2Fh0ZSN74ufwUhxXletb%2BcNPSPrTuq9NRxP0%3D";
 
-    for (const file of files) {
-      try {
-        await uploadToContainer(fullContainerUrl, file.name, file);
+    try {
+      for (const file of files) {
+        try {
+          await uploadToContainer(fullContainerUrl, file.name, file);
 
-        const thumbBlob = await resizeImageFile(file, 300, 300);
-        const thumbName = `${file.name.replace(/\.[^.]+$/, ".JPG")}`;
-        await uploadToContainer(thumbContainerUrl, thumbName, thumbBlob);
+          const thumbBlob = await resizeImageFile(file, 300, 300);
+          const thumbName = `${file.name.replace(/\.[^.]+$/, ".JPG")}`;
+          await uploadToContainer(thumbContainerUrl, thumbName, thumbBlob);
 
-        console.log(`Uploaded ${file.name} + ${thumbName}`);
-      } catch (err) {
-        console.error(`Failed to process ${file.name}:`, err);
+          console.log(`Uploaded ${file.name} + ${thumbName}`);
+        } catch (err) {
+          console.error(`Failed to process ${file.name}:`, err);
+        }
+        alert("New pics uploaded!");
+        window.location.reload();
       }
+    } catch (err) {
+      alert("Error while uploading new pics.");
     }
   };
 
