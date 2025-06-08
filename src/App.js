@@ -85,9 +85,9 @@ function App() {
         } catch (err) {
           console.error(`Failed to process ${file.name}:`, err);
         }
-        alert("New pics uploaded!");
-        window.location.reload();
       }
+      alert("New pics uploaded!");
+      window.location.reload();
     } catch (err) {
       alert("Error while uploading new pics.");
     }
